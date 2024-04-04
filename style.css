@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cl-Cyan: 179, 62%, 43%;
+    --cl-Bright-Yellow: 71, 73%, 54%;
+
+    --ncl-Light-Gray: 204, 43%, 93%;
+    --ncl-Grayish-Blue: 218, 22%, 67%;
+
+    --ff-basic: "Karla", sans-serif;
+    
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    font-size: 16px;
+}
+
+/*********** main section ***********/
+body {
+    font-family: var(--ff-basic);
+    background-color: hsl(var(--ncl-Light-Gray));
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+}
+
+.container {
+    display: grid;
+    margin: 0 2rem;
+    background-color: white;
+    max-width: 635px;
+    border-radius: .35rem;
+    overflow: hidden;
+    box-shadow: 0px 18px 50px -20px hsl(var(--ncl-Grayish-Blue));
+}
+
+.main-container, .price-container, .comment-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1.3rem;
+}
+
+/****** style section ******/
+/* blok 1 */
+h1 {
+    color: hsl(var(--cl-Cyan));
+    font-weight: var(--fw-bold);
+    font-size: 1.25rem;
+    margin: .55rem 0;
+}
+
+.marketing-information {
+    color: hsl(var(--cl-Bright-Yellow));
+    font-weight: var(--fw-bold);
+    font-size: .94rem;
+}
+
+.specification {
+    line-height: 1.6rem;
+    font-size: .875rem;
+    margin-bottom: .55rem;
+    color: hsl(var(--ncl-Grayish-Blue));
+    font-weight: var(--fw-normal);
+}
+
+/* blok 2 */
+.price-container {
+    background-color: hsla(var(--cl-Cyan), 1);
+    color: hsl(0, 0%, 100%);
+}
+
+h2 {
+    font-size: 1.12rem;
+    font-weight: var(--fw-bold);
+    color: hsl(0, 0%, 100%);
+}
+
+.current-price {
+    display: flex;
+    gap: .8em;
+    align-items: center;
+}
+
+#price {
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+}
+
+.comment {
+    color: hsl(0, 0%, 100%, .6)
+}
+
+.price-description {
+    font-weight: var(--fw-normal);
+    margin-top: -10px;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: .9rem;
+    border: inherit;
+    border-radius: .3rem;
+    font-size: 1rem;
+    margin-bottom: .25rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-basic);
+    background-color: hsl(var(--cl-Bright-Yellow));
+    box-shadow: 0px 18px 31px -15px hsla(0, 0%, 0%, 0.411);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsla(var(--cl-Bright-Yellow), .7);
+    color: rgba(255, 255, 255, .7);
+}
+
+button:active {
+    background-color: hsla(var(--cl-Bright-Yellow), .4);
+}
+
+/* blok 3 */
+.comment-container {
+    background-color: hsla(var(--cl-Cyan), .8);
+}
+
+.description {
+    font-size: .9rem;
+    line-height: 1.25rem;
+    font-weight: var(--fw-normal);
+    color: hsla(var(--ncl-Light-Gray), .8);
+}
+
+li {
+    list-style: none;
+}
+
+/*********** query section ***********/
+
+@media (min-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .marketing-information {
+        font-size: 1.1rem;
+    }
+
+    .specification {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+
+    .main-container, .price-container, .comment-container {
+        padding: 2rem 2.5rem;
+    }
+    .main-container {
+        grid-area: 1 / 1 / 1 / 3;
+    }
+}
+
+@media (min-width: 800px) {
+    .container {
+        max-height: 472px;
+    }
+}
+
+/*********** additional section ***********/
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
+  
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
